@@ -1,5 +1,4 @@
 let params2 = new URLSearchParams(window.location.search);
-let socket2 = io();
 
 // Referencias
 const divUsuarios = document.getElementById('divUsuarios');
@@ -49,7 +48,7 @@ formEnviar.addEventListener('submit', (e) => {
     }
 
     // Enviar información
-    socket2.emit('crearMensaje', {
+    socket.emit('crearMensaje', {
         nombre: params.get('nombre'),
         mensaje: mensaje
     }, function(mensaje) {
